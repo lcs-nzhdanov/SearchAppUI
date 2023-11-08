@@ -9,14 +9,15 @@ import SwiftUI
 
 struct ListItem: View {
     
-    let imageName: String
+    let image: Image
     let typeOfProduct: String
     let name: String
     let addInfo: String
+    let addColor: Color
     
     var body: some View {
         HStack {
-            Image(imageName)
+            image
                 .resizable()
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 12.5))
@@ -26,7 +27,7 @@ struct ListItem: View {
                 HStack {
                     Text(typeOfProduct)
                         .bold()
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(addColor)
                     
                     Spacer()
                 }
@@ -46,13 +47,25 @@ struct ListItem: View {
                     Spacer()
                 }
             }
+            
+            ZStack {
+                Circle()
+                    .fill(.white)
+                    .frame(height: 22.5)
+                
+                Image(systemName: "plus.circle.fill")
+                    .font(.system(size: 22.5))
+                    .bold()
+                    .foregroundStyle(Color(addColor))
+                .padding(.horizontal, 5)
+            }
         }
     }
 }
 
 #Preview {
-    ListItem(imageName: "witcher3", typeOfProduct: "GAME", name: """
+    ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: """
 The Witcher 3:
 Wild Hunt
-""", addInfo: "2015")
+""", addInfo: "2015", addColor: Color(.blue))
 }

@@ -13,17 +13,24 @@ struct ContentView: View {
             VStack {
                 
                 List {
-                    ListItem(imageName: "witcher3", typeOfProduct: "GAME", name: "Withcer", addInfo: "2015")
-                    
-                    ListItem(imageName: "witcher3", typeOfProduct: "GAME", name: "Withcer", addInfo: "2015")
-                    
-                    ListItem(imageName: "witcher3", typeOfProduct: "GAME", name: "Withcer", addInfo: "2015")
-                    
-                    ListItem(imageName: "witcher3", typeOfProduct: "GAME", name: "Withcer", addInfo: "2015")
+                    Group {
+                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "Withcer", addInfo: "2015", addColor: Color(.blue))
+                        
+                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "Withcer", addInfo: "2015", addColor: Color(.blue))
+                        
+                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "Withcer", addInfo: "2015", addColor: Color(.blue))
+                        
+                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "Withcer", addInfo: "2015", addColor: Color(.blue))
+                        
+                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "Withcer", addInfo: "2015", addColor: Color(.blue))
+                    }
+                    .listRowSeparator(.hidden)
+                    .frame(height: 130)
                 }
-                
-                
+                .frame(minHeight: 590)
+                .listStyle(.plain)
             }
+            
         }
     }
 }
