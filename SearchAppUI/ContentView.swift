@@ -11,42 +11,16 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                HStack {
-                    Image("witcher3")
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 12.5))
-                        .padding(.horizontal, 5)
+                
+                List {
+                    ListItem(imageName: "witcher3", typeOfProduct: "GAME", name: "Withcer", addInfo: "2015")
                     
-                    VStack(spacing: 5) {
-                        HStack {
-                            Text("GAME")
-                                .bold()
-                            .foregroundStyle(.blue)
-                            
-                            Spacer()
-                        }
-                        
-                        HStack {
-                            Text("""
-    The Witcher 3:
-    Widld Hunt
-    """)
-                            .font(.system(size: 22))
-                            .bold()
-                            Spacer()
-                        }
-                        
-                        HStack {
-                            Text("2015")
-                                .font(.system(size: 20))
-                            .foregroundStyle(Color("Grey"))
-                            
-                            Spacer()
-                        }
-                    }
+                    ListItem(imageName: "witcher3", typeOfProduct: "GAME", name: "Withcer", addInfo: "2015")
+                    
+                    ListItem(imageName: "witcher3", typeOfProduct: "GAME", name: "Withcer", addInfo: "2015")
+                    
+                    ListItem(imageName: "witcher3", typeOfProduct: "GAME", name: "Withcer", addInfo: "2015")
                 }
-                .frame(height: 125)
                 
                 
             }
