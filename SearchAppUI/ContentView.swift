@@ -19,30 +19,32 @@ struct ContentView: View {
         NavigationStack {
             VStack(spacing: 10) {
                 
-                LazyHStack {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 25.0)
-                            .frame(width: 120, height: 40)
-                        Text("Top Results")
-                            .foregroundStyle(.black)
-                            .bold()
+                ScrollView(.horizontal) {
+                    LazyHStack {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .frame(width: 120, height: 40)
+                            Text("Top Results")
+                                .foregroundStyle(.black)
+                                .bold()
+                        }
+                        
+                        Group {
+                            Text("Movies")
+                                .bold()
+                            
+                            Text("Series")
+                                .bold()
+                            
+                            Text("Games")
+                                .bold()
+                            
+                            Text("Books")
+                                .bold()
+                            
+                        }
+                        .padding(.horizontal, 10)
                     }
-                    
-                    Group {
-                        Text("Movies")
-                            .bold()
-                        
-                        Text("Series")
-                            .bold()
-                        
-                        Text("Games")
-                            .bold()
-                        
-                        Text("Books")
-                            .bold()
-                        
-                    }
-                    .padding(.horizontal, 12.5)
                 }
                 
                 List {
@@ -63,6 +65,7 @@ struct ContentView: View {
                 .frame(minHeight: 590)
                 .listStyle(.plain)
             }
+            .padding(.top, -25)
         }
         .searchable(text: $locationSearch) {
             ForEach(searchResults, id: \.self) { name in
