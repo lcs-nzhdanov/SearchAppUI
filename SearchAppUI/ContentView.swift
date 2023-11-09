@@ -17,7 +17,33 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 10) {
+                
+                LazyHStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 25.0)
+                            .frame(width: 120, height: 40)
+                        Text("Top Results")
+                            .foregroundStyle(.black)
+                            .bold()
+                    }
+                    
+                    Group {
+                        Text("Movies")
+                            .bold()
+                        
+                        Text("Series")
+                            .bold()
+                        
+                        Text("Games")
+                            .bold()
+                        
+                        Text("Books")
+                            .bold()
+                        
+                    }
+                    .padding(.horizontal, 12.5)
+                }
                 
                 List {
                     Group {
