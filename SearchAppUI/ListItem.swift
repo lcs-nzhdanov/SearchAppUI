@@ -26,6 +26,7 @@ struct ListItem: View {
             VStack(spacing: 5) {
                 HStack {
                     Text(typeOfProduct)
+                        .font(.system(size: 17))
                         .bold()
                     .foregroundStyle(addColor)
                     
@@ -41,7 +42,7 @@ struct ListItem: View {
                 
                 HStack {
                     Text(addInfo)
-                        .font(.system(size: 20))
+                        .font(.system(size: 17))
                     .foregroundStyle(Color("Grey"))
                     
                     Spacer()

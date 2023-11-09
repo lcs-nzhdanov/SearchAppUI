@@ -45,19 +45,32 @@ struct ContentView: View {
                         }
                         .padding(.horizontal, 10)
                     }
+                  //  .frame(height: 110)
                 }
                 
                 List {
                     Group {
-                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "Witcher", addInfo: "2015", addColor: Color(.blue))
+                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: """
+The Witcher 3:
+Wild Hunt
+""", addInfo: "2015", addColor: Color(.blue))
                         
-                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "Withcer", addInfo: "2015", addColor: Color(.blue))
+                        ListItem(image: Image("witcher3"), typeOfProduct: "BOOK", name: """
+The Witcher
+Official Cookbook
+""", addInfo: """
+Anita Sarna & Karolina
+Krupecka, November 21
+""", addColor: Color(.green))
                         
-                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "Withcer", addInfo: "2015", addColor: Color(.blue))
+                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "The Witcher", addInfo: "Q4 2025", addColor: Color(.blue))
                         
-                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "Withcer", addInfo: "2015", addColor: Color(.blue))
+                        ListItem(image: Image("witcher3"), typeOfProduct: "SERIES", name: "The Witcher", addInfo: "2019", addColor: Color(.purple))
                         
-                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: "Withcer", addInfo: "2015", addColor: Color(.blue))
+                        ListItem(image: Image("witcher3"), typeOfProduct: "GAME", name: """
+The Witcher 2:
+Assassins of Kings
+""", addInfo: "2011", addColor: Color(.blue))
                     }
                     .listRowSeparator(.hidden)
                     .frame(height: 130)
@@ -66,6 +79,7 @@ struct ContentView: View {
                 .listStyle(.plain)
             }
             .padding(.top, -25)
+            
         }
         .searchable(text: $locationSearch) {
             ForEach(searchResults, id: \.self) { name in
@@ -79,11 +93,11 @@ struct ContentView: View {
             name.hasPrefix(locationSearch)
             }
         }
+        
     }
 }
 
 #Preview {
     ContentView()
         .preferredColorScheme(.dark)
-        .ignoresSafeArea()
 }
