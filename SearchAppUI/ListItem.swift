@@ -20,6 +20,8 @@ struct ListItem: View {
             image
                 .resizable()
                 .scaledToFit()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 85)
                 .clipShape(RoundedRectangle(cornerRadius: 12.5))
                 .padding(.horizontal, 5)
             
