@@ -44,7 +44,6 @@ struct ContentView: View {
                         }
                         .padding(.horizontal, 10)
                     }
-                  //  .frame(height: 110)
                 }
                 
                 List {
@@ -89,7 +88,7 @@ Assassins of Kings
         }
         .onChange(of: locationSearch) { _, location in
             searchResults = products.filter { name in
-            name.hasPrefix(locationSearch)
+                name.hasPrefix(locationSearch)
             }
         }
         
